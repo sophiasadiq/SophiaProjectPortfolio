@@ -1,84 +1,63 @@
 body
 {
     font-family: "Times New Roman", 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
 }
 
 header
 {
-    background-color:rgb(255, 255, 255);
-    color: black;
-    text-align: left;
-    padding: 25px;
-    filter: drop-shadow(0 0 0.75rem black);
-    position: relative;
-}
-
-section.about
-{
-    padding: 15px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    background-color: #4285F4;
-    filter: drop-shadow(0 0 0.75rem black);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(255, 255, 255);
+    padding: 10px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: black;
+    position: relative;
+    z-index: 100;
 }
 
-section.about p
-{
+.logo h1 {
+    margin: 0;
+    font-size: 28px;
     font-weight: bold;
 }
 
-div.aboutme
-{
-    margin: 0 auto;
-    width: 50%;
-    padding: 15px;
-    background-color: #f0f0f0;
-    border-radius: 20px;
+
+.logo p {
+    margin: 0;
+    font-size: 12px;
+    color: #666;
 }
 
-.mypicture
-{
-    border: solid #ffffff;
-    padding: 15px;
-    border-radius: 20px;
-    margin-right: 100px;
-}
-
-h2.projects
-{
-    padding-top: 15px;
-    padding-left: 15px;
-    font-size: 32px;
-}
-
-section.projects
-{
-    padding: 15px;
-    padding-top: 0px;
+.nav-links {
     display: flex;
+    gap: 15px;
 }
 
-section.projects div
-{
-    border: solid;
-    border-radius: 5px;
-    padding: 15px;
-    margin-right: 15px;
-}
-
-footer.findme
-{
-    text-align: center;
-    padding: 25px;
-}
-
-button
-{
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
+.nav-links a {
+    text-decoration: none;
+    color: black;
     font-size: 16px;
+    padding: 8px 12px;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid #4285F4;
+}
+
+.header-buttons button {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
     cursor: pointer;
-    background-color: #34a853;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.header-buttons button:hover {
+    background-color: #2c6cc0;
 }
