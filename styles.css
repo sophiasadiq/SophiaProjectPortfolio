@@ -1,15 +1,16 @@
 body
 {
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", 'Times New Roman', Times, serif;
 }
 
 header
 {
     background-color:rgb(255, 255, 255);
     color: black;
-    text-align: center;
+    text-align: left;
     padding: 25px;
     filter: drop-shadow(0 0 0.75rem black);
+    position: relative;
 }
 
 section.about
