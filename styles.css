@@ -18,7 +18,7 @@ header
     background-color:rgb(255, 255, 255);
     padding: 30px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: black;
+    color: blue;
     position: relative;
     z-index: 100;
 }
@@ -33,7 +33,7 @@ header
 .logo p {
     margin: 0;
     font-size: 12px;
-    color: #666;
+    color: blue;
 }
 
 .nav-links {
@@ -43,7 +43,7 @@ header
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: blue;
     font-size: 16px;
     padding: 8px 12px;
 }
