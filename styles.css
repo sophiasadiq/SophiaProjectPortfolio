@@ -16,8 +16,9 @@ header
     justify-content: space-between;
     align-items: center;
     background-color:rgb(255, 255, 255);
-    padding: 40px 50px;
+    padding: 30px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px rgb(64, 179, 164)
     color: #119990;
     position: relative;
     z-index: 100;
