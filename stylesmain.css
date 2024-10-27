@@ -1,0 +1,79 @@
+body
+{
+    font-family: "Times New Roman", 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('bioreactor.webp'); 
+    background-size: cover; /* Ensures the image covers the whole screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-attachment: fixed; /* Make the background stay fixed during scrolling */
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgb(255, 255, 255);
+    padding: 30px 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 8px solid rgb(64, 179, 164);
+    color: #119990;
+    position: relative;
+    z-index: 100;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #119990;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(0, 0, 255, 0.2);
+}
+
+
+.logo p {
+    margin: 0;
+    font-size: 12px;
+    color: #119990;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #119990;
+    font-size: 18px;
+    padding: 10px 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+    border-bottom: 2px solid #4285F4;
+    color: #2c6cc0;
+    transform: scale(1.1);
+}
+
+.header-buttons button {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    text shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.header-buttons button:hover {
+    background-color: #2c6cc0;
+    transform: scale(1.05);
+}
