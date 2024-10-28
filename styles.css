@@ -5,34 +5,35 @@
     box-sizing: border-box;
 }
 
-/* Body styling */
+/* Body Styling */
 body {
     font-family: "Times New Roman", Times, serif;
-    background-image: url('bioreactor.webp'); /* Ensure correct path */
+    background-image: url('bioreactor.webp'); /* Ensure the image path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevent unnecessary scrolling */
-    padding-top: 130px; /* Add padding to avoid overlap with fixed header */
 }
 
-/* Header styling */
+/* Header Styling */
 header {
-    position: fixed; /* Fix the header at the top of the page */
-    top: 0;
-    left: 0;
-    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     padding: 30px 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-bottom: 8px solid rgb(64, 179, 164);
     color: #119990;
-    z-index: 100; /* Keep the header above everything */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
 }
 
-/* Logo styling */
+/* Logo Styling */
 .logo h1 {
     margin: 0;
     font-size: 40px;
@@ -42,7 +43,7 @@ header {
                  -2px -2px 4px rgba(0, 0, 255, 0.2);
 }
 
-/* Navigation links */
+/* Navigation Links */
 .nav-links {
     display: flex;
     gap: 15px;
@@ -62,7 +63,7 @@ header {
     transform: scale(1.1);
 }
 
-/* Email button */
+/* Email Button */
 .header-buttons .email-button {
     background-color: #4285F4;
     color: white;
@@ -77,24 +78,25 @@ header {
     transform: scale(1.05);
 }
 
-/* Center the text bubble container */
+/* Center Container Styling */
 .center-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 130px); /* Subtract header height */
-    overflow: hidden; /* Prevent scrolling */
+    height: calc(100vh - 130px); /* Adjust for header height */
+    padding-top: 130px; /* Push content below the header */
+    overflow: hidden;
 }
 
-/* Text bubble styling */
+/* Text Bubble Styling */
 .text-bubble {
-    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
-    color: #119990; /* Text color to match theme */
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    color: #119990;
     padding: 30px;
-    border-radius: 15px; /* Rounded corners for bubble effect */
+    border-radius: 15px; /* Rounded corners */
     max-width: 600px;
     width: 90%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: center;
     position: relative;
 }
