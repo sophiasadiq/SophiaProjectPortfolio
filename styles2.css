@@ -9,3 +9,65 @@ body
     background-repeat: no-repeat; /* Prevent tiling */
     background-attachment: fixed; /* Make the background stay fixed during scrolling */
 }
+
+/* General Reset for Consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header Section Styling */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f8ff;
+    padding: 20px 50px;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  /* Title/Logo Styling */
+  header h1 {
+    font-size: 32px;
+    color: #2c7873;
+  }
+  
+  /* Navigation Menu Styling */
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #007acc;
+    padding: 10px;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #007acc;
+    border-radius: 5px;
+  }
+  
+  /* Email Button Styling */
+  .email-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .email-button:hover {
+    background-color: #388e3c;
+  }
+  
