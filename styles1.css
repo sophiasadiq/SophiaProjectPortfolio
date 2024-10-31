@@ -10,13 +10,16 @@ body
     background-attachment: fixed; /* Make the background stay fixed during scrolling */
 }
 
-/* General Reset for Consistency */
-* {
+  /* Reset default margins and paddings */
+ html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
   }
+
   
   /* Header Section Styling */
   header {
@@ -71,4 +74,11 @@ body
 .header-buttons .email-button:hover {
     background-color: #2c6cc0;
     transform: scale(1.05);
+}
+
+.scrollable-content {
+    height: 300px; /* Adjust the height as needed */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    width: 100%; /* Ensures it stays within the container */
 }
