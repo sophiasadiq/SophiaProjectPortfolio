@@ -112,3 +112,11 @@ header {
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.85) transparent transparent transparent;
 }
+
+.scrollable-content {
+    height: 300px; /* Adjust the height as needed */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    padding: 10px;
+    border: 1px solid #ccc; /* Optional: adds a border */
+}
+
