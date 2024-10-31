@@ -1,8 +1,11 @@
 /* Reset default margins and paddings */
-* {
+html, body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
 }
 
 /* Body Styling */
@@ -113,11 +116,8 @@ header {
     border-color: rgba(255, 255, 255, 0.85) transparent transparent transparent;
 }
 
-.scrollable-content {
-    height: 300px; /* Adjust the height as needed */
-    overflow-y: scroll; /* Enables vertical scrolling */
-    padding: 10px;
-    border: 1px solid #ccc; /* Optional: adds a border */
+* {
+    box-sizing: border-box;
 }
 
 body {
@@ -126,13 +126,13 @@ body {
 }
 
 .container {
-    overflow-x: hidden;
-    max-width: 100%
+    overflow-x: hidden !important; /* Ensures no horizontal scroll */
+    max-width: 100%; /* Fixes width to 100% */
 }
 
 .scrollable-content {
     height: 300px; /* Adjust the height as needed */
-    overflow-y: scroll; /* Enables vertical scrolling */
+    overflow-y: auto; /* Enables vertical scrolling */
     padding: 10px;
     border: 1px solid #ccc; /* Optional: adds a border */
     width: 100%; /* Ensures it stays within the container */
