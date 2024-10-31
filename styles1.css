@@ -7,7 +7,7 @@ body
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent tiling */
-    background-attachment: fixed; /* Make the background stay fixed during scrolling */
+    background-attachment: scroll; 
 }
 
   /* Reset default margins and paddings */
