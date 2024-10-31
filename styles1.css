@@ -1,38 +1,35 @@
-body
-{
-    font-family: "Times New Roman", 'Times New Roman', Times, serif;
+/* Reset default margins and paddings */
+html, body {
     margin: 0;
     padding: 0;
-    background-image: url('titration.webp'); 
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100%; /* Use min-height instead of height */
+    width: 100%;
+}
+
+/* Body Styling */
+body {
+    font-family: "Times New Roman", Times, serif;
+    background-image: url('titration.webp'); /* Ensure the image path is correct */
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent tiling */
     background-attachment: scroll; 
 }
 
-  /* Reset default margins and paddings */
- html, body {
-    margin: 0;
-    padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-  }
-
-  
-  /* Header Section Styling */
-  header {
+/* Header Section Styling */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(255, 255, 255);
     padding: 30px 50px;
-    border-bottom: 8px solid rgb(64, 179, 164);;
-  }
-  
-  /* Title/Logo Styling */
-  header h1 {
+    border-bottom: 8px solid rgb(64, 179, 164);
+}
+
+/* Title/Logo Styling */
+header h1 {
     margin: 0;
     font-size: 40px;
     font-weight: bold;
@@ -40,13 +37,13 @@ body
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
                  -2px -2px 4px rgba(0, 0, 255, 0.2);
 }
-  
+
 /* Navigation Links */
 .nav-links {
     display: flex;
     gap: 15px;
 }
-  
+
 .nav-links a {
     text-decoration: none;
     color: #119990;
@@ -76,8 +73,9 @@ body
     transform: scale(1.05);
 }
 
+/* Scrollable Content Area */
 .scrollable-content {
-    height: 300px; /* Adjust the height as needed */
+    min-height: 300px; /* Adjust the height if needed */
     overflow-y: auto; /* Enables vertical scrolling */
     padding: 10px;
     width: 100%; /* Ensures it stays within the container */
