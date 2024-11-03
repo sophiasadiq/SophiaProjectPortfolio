@@ -84,5 +84,4 @@ header h1 {
 /* Additional Content to Trigger Scroll */
 .extra-content {
     height: 1500px; /* Add content height to test scrollbar visibility */
-    background-color: rgba(255, 255, 255, 0.5);
 }
