@@ -2,7 +2,6 @@
 html, body {
     margin: 0;
     padding: 0;
-    overflow-y: auto;
     overflow-x: hidden; /* Prevent horizontal scrolling */
     height: 100%; /* Set height to 100% */
     width: 100%; /* Set width to 100% */
@@ -15,7 +14,7 @@ body {
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent tiling */
-    background-attachment: scroll; /* Use fixed for background image that stays */
+    background-attachment: scroll; /* Use scroll for regular background scrolling */
 }
 
 /* Header Section Styling */
@@ -73,8 +72,9 @@ header h1 {
     transform: scale(1.05);
 }
 
+/* Scrollable Content Area */
 .scrollable-content {
-    height: 300px; /* Adjust the height as needed */
+    max-height: 300px; /* Use max-height for flexibility */
     overflow-y: auto; /* Enables vertical scrolling */
     padding: 10px;
     width: 100%; /* Ensures it stays within the container */
