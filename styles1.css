@@ -85,3 +85,24 @@ header h1 {
 .extra-content {
     height: 1500px; /* Add content height to test scrollbar visibility */
 }
+
+/* Styling for the input container */
+.input-container {
+    margin: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Styling for the textbox */
+input[type="text"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus {
+    border-color: #119990; /* Change border color when focused */
+    outline: none; /* Remove the default outline */
+}
+
