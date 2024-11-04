@@ -137,3 +137,7 @@ body {
     width: 100%; /* Ensures it stays within the container */
 }
 
+/* Additional Content to Trigger Scroll */
+.extra-content {
+    height: 1500px; /* Add content height to test scrollbar visibility */
+}
