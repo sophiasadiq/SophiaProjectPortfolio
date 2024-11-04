@@ -7,7 +7,7 @@ body
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent tiling */
-    background-attachment: fixed; /* Make the background stay fixed during scrolling */
+    background-attachment: scroll; 
 }
 
  /* Reset default margins and paddings */
@@ -81,3 +81,9 @@ body
     padding: 10px;
     width: 100%; /* Ensures it stays within the container */
 }
+
+/* Additional Content to Trigger Scroll */
+.extra-content {
+    height: 1500px; /* Add content height to test scrollbar visibility */
+}
+
