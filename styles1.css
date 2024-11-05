@@ -73,54 +73,19 @@ header h1 {
     transform: scale(1.05);
 }
 
-/* Center Container Styling */
-.center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 130px); /* Adjust for header height */
-    padding-top: 130px; /* Push content below the header */
-    overflow: hidden;
-}
-
-/* Text Bubble Styling */
 .text-bubble {
     background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
     color: #119990;
-    padding: 30px;
+    padding: 40px; /* Increase or decrease for more/less spacing inside the bubble */
     border-radius: 15px; /* Rounded corners */
-    max-width: 600px;
-    width: 90%;
+    max-width: 800px; /* Adjust the maximum width to match the area */
+    width: 80%; /* Relative width for responsiveness; adjust as needed */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     text-align: center;
     position: relative;
+    margin: 0 auto; /* Center the text bubble horizontally */
 }
 
-/* Arrow at the bottom of the text bubble */
-.text-bubble::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 10px;
-    border-style: solid;
-    border-color: rgba(255, 255, 255, 0.85) transparent transparent transparent;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    overflow-y: auto; /* Allows vertical scrolling only */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-.container {
-    overflow-x: hidden !important; /* Ensures no horizontal scroll */
-    max-width: 100%; /* Fixes width to 100% */
-}
 
 /* Scrollable Content Area */
 .scrollable-content {
