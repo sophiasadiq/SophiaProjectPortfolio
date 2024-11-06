@@ -87,3 +87,31 @@ body
     height: 1500px; /* Add content height to test scrollbar visibility */
 }
 
+.text-bubble {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    color: #119990;
+    padding: 40px; /* Increase or decrease for more/less spacing inside the bubble */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 800px; /* Adjust the maximum width to match the area */
+    width: 80%; /* Relative width for responsiveness; adjust as needed */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    position: relative;
+    margin: 0 auto; /* Center the text bubble horizontally */
+}
+
+.text-bubble-two {
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
+    color: #119990;
+    padding: 40px; /* Adjust padding as needed */
+    border-radius: 15px; /* Rounded corners */
+    max-width: 800px; /* Adjust maximum width */
+    width: 80%; /* Width relative to the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    text-align: center;
+    position: relative;
+    margin: 20px auto; /* Center horizontally and add margin to separate from other elements */
+}
+
+
+
