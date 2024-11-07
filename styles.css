@@ -11,7 +11,7 @@ html, body {
 /* Body Styling */
 body {
     font-family: "Times New Roman", Times, serif;
-    background-image: url('bioreactor.webp'); /* Ensure the image path is correct */
+    background-image: url('helix.webp'); /* Ensure the image path is correct */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
