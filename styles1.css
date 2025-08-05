@@ -11,7 +11,7 @@ html, body {
 /* Body Styling */
 body {
     font-family: "Times New Roman", Times, serif;
-    background-image: url('titration.webp'); /* Ensure the image path is correct */
+    background-image: url('PagesWallpapers.png'); /* Ensure the image path is correct */
     background-size: cover; /* Ensures the image covers the whole screen */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent tiling */
