@@ -1,3 +1,92 @@
+<script>
+    (() => {
+      const slider = document.getElementById('slider');
+      const track  = document.getElementById('track');
+      const slides = [...track.children];
+      const prev   = document.getElementById('prev');
+      const next   = document.getElementById('next');
+      const dotsWrap = document.getElementById('dots');
+    
+      let i = 0, timer = null, dragging = false, startX = 0, deltaX = 0;
+    
+      // build dots
+      slides.forEach((_, idx) => {
+        const b = document.createElement('button');
+        b.className = 'slider__dot';
+        b.role = 'tab';
+        b.ariaLabel = `Go to slide ${idx+1}`;
+        b.setAttribute('aria-selected', String(idx===0));
+        b.addEventListener('click', () => go(idx, true));
+        dotsWrap.appendChild(b);
+      });
+      const dots = [...dotsWrap.children];
+    
+      function update(){
+        track.style.transform = `translateX(${-i*100}%)`;
+        dots.forEach((d,k)=>d.setAttribute('aria-selected', String(k===i)));
+      }
+      function go(n, user=false){
+        i = (n + slides.length) % slides.length;
+        update();
+        if (user) restart();
+      }
+      const nextSlide = () => go(i+1);
+      const prevSlide = () => go(i-1);
+    
+      function start(){
+        if (timer) return;
+        slider.dataset.paused = "false";
+        const delay = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--slider-delay')) || 4500;
+        timer = setInterval(nextSlide, delay);
+      }
+      function stop(){ slider.dataset.paused = "true"; clearInterval(timer); timer=null; }
+      function restart(){ stop(); start(); }
+    
+      // controls
+      next.addEventListener('click', () => go(i+1, true));
+      prev.addEventListener('click', () => go(i-1, true));
+    
+      // hover/focus pause
+      slider.addEventListener('mouseenter', stop);
+      slider.addEventListener('mouseleave', start);
+      slider.addEventListener('focusin', stop);
+      slider.addEventListener('focusout', start);
+    
+      // keyboard
+      slider.tabIndex = 0;
+      slider.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') go(i+1, true);
+        else if (e.key === 'ArrowLeft') go(i-1, true);
+      });
+    
+      // swipe
+      track.addEventListener('pointerdown', e => {
+        dragging = true; startX = e.clientX; deltaX = 0; stop();
+        track.style.transition = 'none';
+      });
+      window.addEventListener('pointermove', e => {
+        if (!dragging) return;
+        deltaX = e.clientX - startX;
+        track.style.transform = `translateX(calc(${-i*100}% + ${deltaX}px))`;
+      });
+      window.addEventListener('pointerup', () => {
+        if (!dragging) return; dragging = false; track.style.transition = '';
+        const thresh = slider.clientWidth * 0.15;
+        if (deltaX >  thresh) go(i-1, true);
+        else if (deltaX < -thresh) go(i+1, true);
+        else update();
+        start();
+      });
+    
+      // tab visibility
+      document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    
+      // init
+      update(); start();
+    })();
+    </script>
+    
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +118,22 @@
         <div class="text-bubble">
         <h1>City of Brampton Co-op Term</h1>
         <h2>Volunteering for Grow Green Festival @Paul Palleschi Recreation Centre</h2>
-        <img src="ThreePeople.jfif" width="550" height="400">
+        <!-- Slideshow START -->
+    <div class="slider" id="slider" aria-roledescription="carousel" aria-label="In-Person Events slideshow">
+    <div class="slider__track" id="track">
+      <figure class="slide"><img src="ThreePeople.jfif" alt="Picture Includes: Curtis, Shanka and Sophia"></figure>
+      <!-- Add more slides: -->
+      <figure class="slide"><img src="FivePeople.jfif" alt="Picture Includes: Rajdeep, Sophia, Shanka, Curtis and Roby"></figure>
+      <figure class="slide"><img src="Twopeople.png" alt="Picture Includes: Shanka and Sophia"></figure>
+      <figure class="slide"><img src="Buttons.jfif" alt="Buttons Created for the event"></figure>
+    </div>
+  
+    <button class="slider__btn slider__btn--prev" id="prev" aria-label="Previous slide">‹</button>
+    <button class="slider__btn slider__btn--next" id="next" aria-label="Next slide">›</button>
+    <div class="slider__dots" id="dots" role="tablist" aria-label="Choose slide"></div>
+  </div>
+  <!-- Slideshow END -->
+  
     </div>
 </div>
 
