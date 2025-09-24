@@ -1,54 +1,60 @@
 <script>
     (() => {
-      const slider = document.getElementById('slider');
-      const track  = document.getElementById('track');
-      const slides = [...track.children];
-      const prev   = document.getElementById('prev');
-      const next   = document.getElementById('next');
-      const thumbs = [...document.getElementById('thumbs').children];
+      const wrap  = document.getElementById('gs');
+      const track = document.getElementById('gs-track');
+      const slides= [...track.children];
+      const prev  = document.getElementById('gs-prev');
+      const next  = document.getElementById('gs-next');
+      const dotsWrap = document.getElementById('gs-dots');
     
-      let i = 0, timer = null, dragging = false, startX = 0, deltaX = 0;
+      // dots
+      slides.forEach((_, idx) => {
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.setAttribute('aria-label', `Go to slide ${idx+1}`);
+        b.setAttribute('aria-selected', idx===0 ? 'true' : 'false');
+        b.addEventListener('click', () => go(idx, true));
+        dotsWrap.appendChild(b);
+      });
+      const dots = [...dotsWrap.children];
     
-      function update(){
+      let i = 0, timer = null;
+    
+      function update() {
         track.style.transform = `translateX(${-i*100}%)`;
-        thumbs.forEach((t,k)=> t.classList.toggle('active', k===i));
+        dots.forEach((d,k)=> d.setAttribute('aria-selected', String(k===i)));
       }
       function go(n, user=false){ i = (n + slides.length) % slides.length; update(); if(user) restart(); }
       const nextSlide = () => go(i+1);
       const prevSlide = () => go(i-1);
     
-      // thumbs click
-      thumbs.forEach((t,idx)=> t.addEventListener('click', ()=> go(idx, true)));
-    
-      // arrows
-      next.addEventListener('click', ()=> go(i+1, true));
-      prev.addEventListener('click', ()=> go(i-1, true));
+      prev.addEventListener('click', () => go(i-1, true));
+      next.addEventListener('click', () => go(i+1, true));
     
       // autoplay + pause on hover/focus
-      function start(){ if(timer) return; slider.dataset.paused="false"; timer=setInterval(nextSlide, 4500); }
-      function stop(){ slider.dataset.paused="true"; clearInterval(timer); timer=null; }
+      function start(){ if(!timer) timer = setInterval(nextSlide, 4500); }
+      function stop(){ clearInterval(timer); timer = null; }
       function restart(){ stop(); start(); }
-      slider.addEventListener('mouseenter', stop);
-      slider.addEventListener('mouseleave', start);
-      slider.addEventListener('focusin', stop);
-      slider.addEventListener('focusout', start);
+      wrap.addEventListener('mouseenter', stop);
+      wrap.addEventListener('mouseleave', start);
+      wrap.addEventListener('focusin', stop);
+      wrap.addEventListener('focusout', start);
     
       // keyboard
-      slider.tabIndex = 0;
-      slider.addEventListener('keydown', e => {
+      wrap.tabIndex = 0;
+      wrap.addEventListener('keydown', e => {
         if (e.key === 'ArrowRight') go(i+1, true);
         else if (e.key === 'ArrowLeft') go(i-1, true);
       });
     
       // swipe
-      track.addEventListener('pointerdown', e => { dragging=true; startX=e.clientX; deltaX=0; stop(); track.style.transition='none'; });
-      window.addEventListener('pointermove', e => { if(!dragging) return; deltaX = e.clientX - startX; track.style.transform = `translateX(calc(${-i*100}% + ${deltaX}px))`; });
+      let dragging=false, startX=0, dx=0;
+      track.addEventListener('pointerdown', e => { dragging=true; startX=e.clientX; dx=0; stop(); track.style.transition='none'; });
+      window.addEventListener('pointermove', e => { if(!dragging) return; dx=e.clientX-startX; track.style.transform=`translateX(calc(${-i*100}% + ${dx}px))`; });
       window.addEventListener('pointerup', () => {
         if(!dragging) return; dragging=false; track.style.transition='';
-        const thresh = slider.clientWidth * 0.15;
-        if (deltaX >  thresh) go(i-1, true);
-        else if (deltaX < -thresh) go(i+1, true);
-        else update();
+        const t = wrap.clientWidth * 0.15;
+        if (dx >  t) go(i-1, true); else if (dx < -t) go(i+1, true); else update();
         start();
       });
     
@@ -57,6 +63,7 @@
       update(); start();
     })();
     </script>
+    
     
 
 <!DOCTYPE html>
@@ -90,39 +97,19 @@
         <div class="text-bubble">
         <h1>City of Brampton Co-op Term</h1>
         <h2>Volunteering for Grow Green Festival @Paul Palleschi Recreation Centre</h2>
-       <!-- Slideshow START -->
-<div class="slider" id="slider" aria-roledescription="carousel" aria-label="In-Person Events slideshow">
-    <div class="slider__track" id="track">
-      <figure class="slide">
-        <img src="GroupPhoto.png" alt="Grow Green booth — group photo">
-        <figcaption class="caption">Grow Green booth — group photo</figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="Postersign.jfif" alt="Poster table and materials">
-        <figcaption class="caption">Poster table and materials</figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="PipePhoto.png" alt="Energy dashboard demo">
-        <figcaption class="caption">Energy dashboard demo</figcaption>
-      </figure>
-      <figure class="slide">
-        <img src="Twopeople.png" alt="Attendees at the booth">
-        <figcaption class="caption">Attendees at the booth</figcaption>
-      </figure>
+      <!-- ONE SLIDESHOW -->
+<div class="gs" id="gs" aria-roledescription="carousel" aria-label="In-Person Events">
+    <div class="gs-track" id="gs-track">
+      <figure class="gs-slide"><img src="ThreePeople.jfif"   alt="Grow Green booth — group photo"></figure>
+      <figure class="gs-slide"><img src="FivePeople.jfif"  alt="Poster and materials"></figure>
+      <figure class="gs-slide"><img src="Twopeople.png"    alt="Energy dashboard demo"></figure>
+      <figure class="gs-slide"><img src="Buttons.jfif"    alt="Buttons Created"></figure>
     </div>
   
-    <button class="slider__btn slider__btn--prev" id="prev" aria-label="Previous slide">‹</button>
-    <button class="slider__btn slider__btn--next" id="next" aria-label="Next slide">›</button>
-  
-    <!-- Thumbnails (filmstrip) -->
-    <div class="slider__thumbs" id="thumbs" aria-label="Thumbnails">
-      <img src="GroupPhoto.png" alt="Group photo thumbnail">
-      <img src="Postersign.jfif" alt="Poster thumbnail">
-      <img src="PipePhoto.png" alt="Dashboard thumbnail">
-      <img src="Twopeople.png" alt="Visitors thumbnail">
-    </div>
+    <button class="gs-btn gs-prev" id="gs-prev" aria-label="Previous">‹</button>
+    <button class="gs-btn gs-next" id="gs-next" aria-label="Next">›</button>
+    <div class="gs-dots" id="gs-dots"></div>
   </div>
-  <!-- Slideshow END -->
   
 
 <div class="container">
