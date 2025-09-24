@@ -116,38 +116,42 @@ body
 :root { --gs-w: 960px; --gs-speed: 450ms; }
 
 .gs{
-  margin: 1rem auto;
-  max-width: var(--gs-w);
-  aspect-ratio: 16/9;
-  position: relative;
-  overflow: hidden;
-  background:#000;
-  border-radius:12px;
-  box-shadow:0 6px 20px rgba(0,0,0,.15);
+  margin:1rem auto; max-width:var(--gs-w);
+  aspect-ratio:16/9; position:relative; overflow:hidden;
+  background:#000; border-radius:12px;
 }
-.gs-track{
-  display:flex; height:100%;
-  transition: transform var(--gs-speed) ease-in-out;
-  will-change: transform;
-}
-.gs-slide{ min-width:100%; height:100%; }
-.gs-slide img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-/* arrows */
-.gs-btn{
-  position:absolute; top:50%; translate:0 -50%;
-  width:42px; height:42px; border:0; border-radius:999px;
-  background:rgba(0,0,0,.45); color:#fff; cursor:pointer;
+.gs-track{
+  display:flex;               /* key: lay slides in a row */
+  flex-wrap:nowrap;
+  height:100%;
+  transition:transform var(--gs-speed) ease-in-out;
+  will-change:transform;
 }
+
+.gs-slide{                    /* each slide takes full width */
+  flex:0 0 100%;
+  height:100%;
+  margin:0;                   /* avoid figure default margins */
+}
+
+.gs-slide img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+/* arrows & dots (unchanged) */
+.gs-btn{ position:absolute; top:50%; translate:0 -50%;
+  width:42px; height:42px; border:0; border-radius:999px;
+  background:rgba(0,0,0,.45); color:#fff; cursor:pointer; }
 .gs-btn:hover{ background:rgba(0,0,0,.65); }
 .gs-prev{ left:.6rem; } .gs-next{ right:.6rem; }
 
-/* dots */
 .gs-dots{ position:absolute; left:50%; bottom:.6rem; translate:-50% 0; display:flex; gap:.5rem; }
-.gs-dots button{
-  width:10px; height:10px; border-radius:50%; border:0;
-  background:rgba(255,255,255,.45); cursor:pointer;
-}
+.gs-dots button{ width:10px; height:10px; border-radius:50%; border:0; background:rgba(255,255,255,.45); }
 .gs-dots button[aria-selected="true"]{ background:#fff; }
 
+/* optional: on very small screens */
 @media (max-width:600px){ .gs-btn{ width:36px; height:36px; } }
+
+
+
