@@ -113,45 +113,85 @@ body
     margin: 20px auto; /* Center horizontally and add margin to separate from other elements */
 }
 
-:root { --gs-w: 960px; --gs-speed: 450ms; }
-
-.gs{
-  margin:1rem auto; max-width:var(--gs-w);
-  aspect-ratio:16/9; position:relative; overflow:hidden;
-  background:#000; border-radius:12px;
-}
-
-.gs-track{
-  display:flex;               /* key: lay slides in a row */
-  flex-wrap:nowrap;
-  height:100%;
-  transition:transform var(--gs-speed) ease-in-out;
-  will-change:transform;
-}
-
-.gs-slide{                    /* each slide takes full width */
-  flex:0 0 100%;
-  height:100%;
-  margin:0;                   /* avoid figure default margins */
-}
-
-.gs-slide img{
-  width:100%; height:100%; object-fit:cover; display:block;
-}
-
-/* arrows & dots (unchanged) */
-.gs-btn{ position:absolute; top:50%; translate:0 -50%;
-  width:42px; height:42px; border:0; border-radius:999px;
-  background:rgba(0,0,0,.45); color:#fff; cursor:pointer; }
-.gs-btn:hover{ background:rgba(0,0,0,.65); }
-.gs-prev{ left:.6rem; } .gs-next{ right:.6rem; }
-
-.gs-dots{ position:absolute; left:50%; bottom:.6rem; translate:-50% 0; display:flex; gap:.5rem; }
-.gs-dots button{ width:10px; height:10px; border-radius:50%; border:0; background:rgba(255,255,255,.45); }
-.gs-dots button[aria-selected="true"]{ background:#fff; }
-
-/* optional: on very small screens */
-@media (max-width:600px){ .gs-btn{ width:36px; height:36px; } }
-
-
-
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
