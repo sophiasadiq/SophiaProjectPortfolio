@@ -6,34 +6,6 @@
     <title>Page with Textbox</title>
     <link rel="stylesheet" href="styles3.css"> 
 
-</head>
-
-<script>
-    let slideIndex = 1;
-    
-    function showSlides(n){
-      const slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) slideIndex = 1;
-      if (n < 1)             slideIndex = slides.length;
-      for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
-      slides[slideIndex - 1].classList.add("active");
-    }
-    
-    function plusSlides(n){ showSlides(slideIndex += n); }
-    
-    // Optional: keyboard arrows
-    document.getElementById('ss').tabIndex = 0;
-    document.getElementById('ss').addEventListener('keydown', e => {
-      if (e.key === 'ArrowRight') plusSlides(1);
-      if (e.key === 'ArrowLeft')  plusSlides(-1);
-    });
-    
-    // init
-    showSlides(slideIndex);
-    // Optional autoplay: uncomment below
-    // setInterval(() => plusSlides(1), 4500);
-    </script>
-
 
 <body>
 
@@ -101,6 +73,36 @@
 
 <div class="extra-content"></div>
 
-
-</body>
-</html>
+<script>
+  let slideIndex = 1;
+  showSlides(slideIndex);
+  
+  // Next/previous
+  function plusSlides(n) { showSlides(slideIndex += n); }
+  // Thumbnail click
+  function currentSlide(n) { showSlides(slideIndex = n); }
+  
+  function showSlides(n) {
+    let i;
+    const slides = document.getElementsByClassName("mySlides");
+    const dots   = document.getElementsByClassName("demo");
+    const captionText = document.getElementById("caption");
+  
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1)             { slideIndex = slides.length; }
+  
+    for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    for (i = 0; i < dots.length;   i++) dots[i].className = dots[i].className.replace(" active", "");
+  
+    slides[slideIndex-1].style.display = "block";
+    if (dots.length) {
+      dots[slideIndex-1].className += " active";
+      captionText.textContent = dots[slideIndex-1].alt || "";
+    } else {
+      captionText.textContent = "";
+    }
+  }
+  </script>
+  </body>
+  </html>
+  
