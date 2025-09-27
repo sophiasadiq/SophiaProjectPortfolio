@@ -209,3 +209,24 @@ body
 
 .ss .prev { left:  var(--arrow-edge) !important; }
 .ss .next { right: var(--arrow-edge) !important; }
+
+/* FINAL override for arrow positions */
+.ss { position: relative; }
+
+.ss .prev,
+.ss .next{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px; height: 42px;
+  border: 0; border-radius: 999px;
+  background: rgba(0,0,0,.45);
+  color: #fff; cursor: pointer;
+}
+
+/* put them near the edges */
+.ss .prev { left: 12px !important;  right: auto !important; }
+.ss .next { right: 12px !important; left:  auto !important; }
+
+/* tweak 12px to taste (e.g., 24px) */
+
