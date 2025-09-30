@@ -113,112 +113,28 @@ body
     margin: 20px auto; /* Center horizontally and add margin to separate from other elements */
 }
 
-* {
-    box-sizing: border-box;
-  }
-  
-  /* Position the image container (needed to position the left and right arrows) */
-  .container {
-    position: relative;
-  }
-  
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
-  
-  /* Black box with white arrow */
-.prev,
-.next{
-  position:absolute;
-  top:50%;
-  transform: translateY(-50%);
-  width:44px;
-  height:44px;
-  display:grid;
-  place-items:center;      /* centers the arrow */
-  background:#000;         /* black box */
-  color:#fff;              /* white arrow (text) */
-  border:0;
-  border-radius:999px;     /* circle; use 6px for rounded square */
-  text-decoration:none;    /* remove link underline */
-  cursor:pointer;
-}
 
-/* place near edges (adjust to taste) */
-.prev{ left:12px;  }
-.next{ right:12px; }
+/*Slideshow #1 and #2:*/
+/* Hide frames by default */
+.mySlides, .mySlides2 { display: none; }
 
-/* hover/focus states (optional) */
-.prev:hover,.next:hover{ background:#111; }
-.prev:focus-visible,.next:focus-visible{
-  outline:2px solid #fff; outline-offset:2px;
-}
-
-  
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
-    float: left;
-    width: 16.66%;
-  }
-  
-  /* Add a transparency effect for thumnbail images */
-  .demo {
-    opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
-
- /* how far from the left/right edge */
-:root { --arrow-edge: 12px; }
-
+/* Base container + nav buttons shared */
 .ss { position: relative; }
 
-.ss .nav{
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:42px; height:42px; border:0; border-radius:999px;
-  background:rgba(0,0,0,.45); color:#fff; cursor:pointer;
-}
-
-.ss .prev { left:  var(--arrow-edge) !important; }
-.ss .next { right: var(--arrow-edge) !important; }
-
-/* FINAL override for arrow positions */
-.ss { position: relative; }
-
-.ss .prev,
-.ss .next{
+.ss .prev, .ss .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 42px; height: 42px;
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
   border: 0; border-radius: 999px;
-  background: rgba(0,0,0,.45);
-  color: #fff; cursor: pointer;
+  background: rgba(0,0,0,.45);  /* black box */
+  color: #fff;                  /* white arrow */
+  cursor: pointer;
+  z-index: 2;                   /* ensure above image */
 }
 
-/* put them near the edges */
-.ss .prev { left: 12px !important;  right: auto !important; }
-.ss .next { right: 12px !important; left:  auto !important; }
-
-/* tweak 12px to taste (e.g., 24px) */
-
-
+/* Use a CSS variable for edge spacing; default 12px */
+.ss { --arrow-edge: 12px; }
+.ss .prev { left:  var(--arrow-edge); right: auto; }
+.ss .next { right: var(--arrow-edge); left:  auto; }
