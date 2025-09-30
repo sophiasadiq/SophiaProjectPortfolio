@@ -35,29 +35,29 @@
 <div class="container">
 
     <!-- Slideshow #1(Volunteering Event): Pictures -->
-    <div class="mySlides1">
+    <div class="mySlides">
       <div class="numbertext">1 / 4</div>
         <img src="FivePeople.jfif" style="width:100%">
     </div>
   
-    <div class="mySlides1">
+    <div class="mySlides">
       <div class="numbertext">2 / 4</div>
         <img src="ThreePeople.jfif" style="width:100%">
     </div>
   
-    <div class="mySlides1">
+    <div class="mySlides">
       <div class="numbertext">3 / 4</div>
         <img src="Twopeople.png" style="width:100%">
     </div>
   
-    <div class="mySlides1">
+    <div class="mySlides">
       <div class="numbertext">4 / 4</div>
         <img src="Buttons1.png" style="width:100%">
     </div>
   
     <!-- Slideshow #1(Volunteering Event): Button Slide -->
-    <button class="nav prev" onclick="plusSlides1(-1)">❮</button>
-    <button class="nav next" onclick="plusSlides1(1)">❯</button>
+    <button class="nav prev" onclick="plusSlides(-1)">❮</button>
+    <button class="nav next" onclick="plusSlides(1)">❯</button>
 
     <!-- Slideshow #2(Susan Fennell Complex): Container for the image gallery -->
 <div class="container">
@@ -96,13 +96,13 @@
   showSlides(slideIndex);
   
   // Next/previous
-  function plusSlides1(n) { showSlides(slideIndex += n); }
+  function plusSlides(n) { showSlides(slideIndex += n); }
   // Thumbnail click
   function currentSlide(n) { showSlides(slideIndex = n); }
   
   function showSlides(n) {
     let i;
-    const slides = document.getElementsByClassName("mySlides1");
+    const slides = document.getElementsByClassName("mySlides");
     const dots   = document.getElementsByClassName("demo");
     const captionText = document.getElementById("caption");
   
@@ -121,6 +121,32 @@
     }
   }
   </script>
+
+<!-- Slideshow #2(Susan Fennell Complex): Button Programming -->
+<script>
+  let slideIndex2 = 1;
+  showSlides2(slideIndex2);
+  
+  function plusSlides2(n){ showSlides2(slideIndex2 += n); }
+  function currentSlide2(n){ showSlides2(slideIndex2 = n); }
+  
+  function showSlides2(n){
+    let i;
+    const slides = document.getElementsByClassName("mySlides2");
+    const captionText = document.getElementById("caption2");
+  
+    if (n > slides.length) { slideIndex2 = 1; }
+    if (n < 1) { slideIndex2 = slides.length; }
+  
+    for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+  
+    slides[slideIndex2-1].style.display = "block";
+    if (captionText) {
+      captionText.textContent = slides[slideIndex2-1].querySelector("img")?.alt || "";
+    }
+  }
+  </script>
+  
 
 
   </body>
