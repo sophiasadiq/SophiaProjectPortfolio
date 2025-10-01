@@ -114,22 +114,40 @@ body
 }
 
 
-/*Slideshow #1 and #2:*/
-/* container establishes positioning context */
-.container { position: relative; --arrow-edge: 12px; }
-
-/* hide frames by default; each JS shows its own */
-.container .mySlides,
-.container .mySlides2 { display: none; }
-
-/* round black buttons with white arrows, centered vertically */
-.container .nav{
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px; display: grid; place-items: center;
-  border: 0; border-radius: 999px; background: #000; color: #fff;
-  cursor: pointer; z-index: 2;
+/* Shared slideshow wrapper */
+.ss{
+  position: relative;        /* anchor for absolutely positioned arrows */
+  max-width: 1100px;         /* optional */
+  margin: 0 auto 48px;       /* optional spacing */
 }
-.container .nav.prev { left: var(--arrow-edge);  right: auto; }
-.container .nav.next { right: var(--arrow-edge); left:  auto; }
 
-.container .nav:hover { background:#111; outline:2px solid #fff; outline-offset:2px; }
+/* Hide frames by default */
+#ss1 .mySlides,
+#ss2 .mySlides2 { display:none; }
+
+/* Images fill width and define the wrapper height */
+.ss img{ display:block; width:100%; height:auto; }
+
+/* Arrow buttons: black circle with white arrow, centered vertically */
+.ss .nav{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px; height:44px;
+  display:grid; place-items:center;
+  border:0; border-radius:999px;
+  background:#000; color:#fff;
+  cursor:pointer; z-index:2;
+}
+
+/* Edge spacing (tweak 12px if you like) */
+.ss .prev{ left:12px; }
+.ss .next{ right:12px; }
+
+/* Optional hover focus */
+.ss .nav:hover,
+.ss .nav:focus-visible{
+  background:#111;
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
