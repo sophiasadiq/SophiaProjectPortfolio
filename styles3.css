@@ -115,26 +115,44 @@ body
 
 
 /*Slideshow #1 and #2:*/
-/* Hide frames by default */
-.mySlides, .mySlides2 { display: none; }
+/* Works for both slideshows that use class="container" and buttons class="nav prev/next" */
 
-/* Base container + nav buttons shared */
-.ss { position: relative; }
+/* container = positioning context + spacing variable */
+.container {
+  position: relative;
+  --arrow-edge: 12px;          /* tweak to taste */
+}
 
-.ss .prev, .ss .next {
+/* hide frames by default (supports either class used by your two JS functions) */
+.container .mySlides,
+.container .mySlides2 { display: none; }
+
+/* arrow buttons: black circle with white arrow, centered vertically */
+.container .nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  border: 0; border-radius: 999px;
-  background: rgba(0,0,0,.45);  /* black box */
-  color: #fff;                  /* white arrow */
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 999px;
+  background: #000;            /* black box */
+  color: #fff;                 /* white arrow glyph */
   cursor: pointer;
-  z-index: 2;                   /* ensure above image */
+  z-index: 2;                  /* sit above the image */
 }
 
-/* Use a CSS variable for edge spacing; default 12px */
-.ss { --arrow-edge: 12px; }
-.ss .prev { left:  var(--arrow-edge); right: auto; }
-.ss .next { right: var(--arrow-edge); left:  auto; }
+/* place near the edges */
+.container .nav.prev  { left:  var(--arrow-edge); right: auto; }
+.container .nav.next  { right: var(--arrow-edge); left:  auto; }
+
+/* optional hover/focus */
+.container .nav:hover,
+.container .nav:focus-visible {
+  background: #111;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
