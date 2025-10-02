@@ -127,17 +127,110 @@ body
 /* Images fill width and define the wrapper height */
 .ss img{ display:block; width:100%; height:auto; }
 
-/* Arrow buttons: black circle with white arrow, centered vertically */
+/* Arrow buttons: black circle with white arrow, centered horizontally */
 .ss .nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:44px; height:44px;
-  display:grid; place-items:center;
-  border:0; border-radius:999px;
-  background:#000; color:#fff;
-  cursor:pointer; z-index:2;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
 }
+
+/* Position the "next button" to the right */
+.ss .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.ss .prev:hover,
+.ss .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.ss .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.ss .caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.ss .row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.ss .column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.ss .demo {
+  opacity: 0.6;
+}
+
+.ss .active,
+.ss .demo:hover {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Edge spacing (tweak 12px if you like) */
 .ss .prev{ left:12px; }
