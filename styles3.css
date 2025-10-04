@@ -112,36 +112,33 @@ body
 
 
 
-/* Slideshow wrapper */
-.ss { position: relative; max-width: 1100px; margin: 0 auto 48px; }
-.ss .mySlides { display: none; position: relative; }
-.ss img { display: block; width: 100%; height: auto; }
-
-/* Number text (1/4) – optional */
-.ss .numbertext{
-  position: absolute; top: 8px; left: 12px;
-  color: #f2f2f2; font-size: 12px; padding: 4px 8px;
-  background: rgba(0,0,0,.35); border-radius: 4px;
+/* Navigation buttons centered vertically */
+.ss .prev, 
+.ss .next {
+  position: absolute;
+  top: 50%;                      /* Position vertically at halfway */
+  transform: translateY(-50%);   /* Offset by half their own height */
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;                    /* Make sure they appear above the image */
 }
 
-/* NAV arrows on the left/right edges */
-.ss .nav{
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 44px; height: 44px; display: grid; place-items: center;
-  background: #000; color: #fff; border: 0; border-radius: 999px;
-  cursor: pointer; z-index: 2;
+/* Left button */
+.ss .prev {
+  left: 12px;  /* adjust spacing from left */
 }
-.ss .prev { left: 12px; }
-.ss .next { right: 12px; }
-.ss .nav:hover{ background: #111; }
 
-/* NEW: caption bar over the bottom of the image */
-.ss .caption-container{
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 1;
-  background: rgba(0,0,0,.75); color: #fff;
-  padding: 12px 16px; text-align: center; box-sizing: border-box;
-  font-size: 18px; font-weight: 600;
+/* Right button */
+.ss .next {
+  right: 12px; /* adjust spacing from right */
 }
+
 
 
 
