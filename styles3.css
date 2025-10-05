@@ -143,3 +143,33 @@ body
 .ss .next { right: 12px; left:  auto; }
 
 
+/* The slideshow wrapper is already relative (.ss), so the badge
+   can be positioned absolutely inside each slide. */
+   .ss { position: relative; }
+
+   /* Number badge: top-left, translucent pill */
+   .ss .numbertext{
+     position: absolute;
+     top: 8px;              /* distance from top edge */
+     left: 8px;             /* distance from left edge */
+     z-index: 3;            /* above the image/arrows */
+     padding: 4px 10px;     /* bubble size */
+     font-size: 12px;
+     line-height: 1;
+     color: #fff;           /* white text */
+     background: rgba(0,0,0,0.45);   /* see-through black */
+     border-radius: 999px;  /* pill/bubble shape */
+     box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* subtle lift */
+     pointer-events: none;  /* clicks pass through */
+     backdrop-filter: blur(2px);
+   }
+   
+   /* (optional) a bit larger on wider screens */
+   @media (min-width: 640px){
+     .ss .numbertext{ font-size: 13px; padding: 6px 12px; }
+   }
+   
+  
+
+
+
