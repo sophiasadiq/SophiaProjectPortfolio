@@ -112,40 +112,38 @@ body
 
 
 
-/* Wrapper for each slideshow */
+/* slideshow wrapper (anchor for absolute arrows) */
 .ss{
-  position: relative;            /* anchor for absolute buttons */
+  position: relative;
   max-width: 1100px;
-  margin: 0 auto 40px;           /* center + spacing below */
+  margin: 0 auto 40px;
 }
 
-/* Hide frames initially */
+/* hide frames by default (both slide classes) */
 .ss .mySlides,
 .ss .mySlides2 { display: none; }
 
-/* Images fill the wrapper and set its height */
-.ss img { display: block; width: 100%; height: auto; }
+.ss img{ display:block; width:100%; height:auto; }
 
-/* Arrows: black circle with white glyph, centered vertically */
+/* arrows */
 .ss .nav{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 44px; height: 44px;
+  display: grid; place-items: center;
   border: 0; border-radius: 999px;
   background: #000; color: #fff;
-  display: grid; place-items: center;
-  cursor: pointer;
-  z-index: 2;                     /* sit above the image */
+  cursor: pointer; z-index: 2;
 }
 
-/* Put them near the edges */
-.ss .prev{ left: 12px;  right: auto; }
-.ss .next{ right: 12px; left:  auto; }
+/* left/right placement inside the photo */
+.ss .prev{ left: 12px; right: auto; }
+.ss .next{ right: 12px; left: auto; }
 
-/* If your older CSS still wins, force it: */
-/* .ss .prev{ left:12px !important; right:auto !important; }
-   .ss .next{ right:12px !important; left:auto !important; } */
+/* if older rules keep winning, bump specificity */
+#ss1 .prev{ left:12px !important; right:auto !important; }
+#ss1 .next{ right:12px !important; left:auto !important; }
 
 
 
