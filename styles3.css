@@ -112,41 +112,34 @@ body
 
 
 
-/* slideshow wrapper (anchor for absolute arrows) */
+/* Slideshow wrapper (anchor for the absolute buttons) */
 .ss{
-  position: relative;
+  position: relative;              /* <<< anchor */
   max-width: 1100px;
   margin: 0 auto 40px;
 }
 
-/* hide frames by default (both slide classes) */
+/* hide frames initially (both slide classes) */
 .ss .mySlides,
 .ss .mySlides2 { display: none; }
 
-.ss img{ display:block; width:100%; height:auto; }
+/* images define the wrapper height */
+.ss img { display: block; width: 100%; height: auto; }
 
-/* arrows */
+/* arrows: centered vertically, black circle with white glyph */
 .ss .nav{
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%);     /* center vertically in .ss */
   width: 44px; height: 44px;
   display: grid; place-items: center;
   border: 0; border-radius: 999px;
   background: #000; color: #fff;
-  cursor: pointer; z-index: 2;
+  cursor: pointer; z-index: 2;     /* sit above the photo */
 }
 
-/* left/right placement inside the photo */
-.ss .prev{ left: 12px; right: auto; }
-.ss .next{ right: 12px; left: auto; }
-
-/* if older rules keep winning, bump specificity */
-#ss1 .prev{ left:12px !important; right:auto !important; }
-#ss1 .next{ right:12px !important; left:auto !important; }
-
-
-
-
+/* put them near the left/right edges of the photo */
+.ss .prev { left: 12px;  right: auto; }
+.ss .next { right: 12px; left:  auto; }
 
 
