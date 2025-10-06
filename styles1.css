@@ -113,3 +113,68 @@ header h1 {
     height: 1500px; /* Add content height to test scrollbar visibility */
 }
 
+
+
+
+/* Slideshow wrapper (anchor for the absolute buttons) */
+.ss{
+    position: relative;              /* <<< anchor */
+    max-width: 1100px;
+    margin: 0 auto 40px;
+  }
+  
+  /* hide frames initially (both slide classes) */
+  .ss .mySlides3,
+  .ss .mySlides4 { display: none; }
+  
+  /* images define the wrapper height */
+  .ss img { display: block; width: 100%; height: auto; }
+  
+  /* arrows: centered vertically, black circle with white glyph */
+  .ss .nav{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);     /* center vertically in .ss */
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border: 0; border-radius: 999px;
+    background: #000; color: #fff;
+    cursor: pointer; z-index: 2;     /* sit above the photo */
+  }
+  
+  /* put them near the left/right edges of the photo */
+  .ss .prev { left: 12px;  right: auto; }
+  .ss .next { right: 12px; left:  auto; }
+  
+  
+  /* The slideshow wrapper is already relative (.ss), so the badge
+     can be positioned absolutely inside each slide. */
+     .ss { position: relative; }
+  
+     /* Number badge: top-left, translucent pill */
+     .ss .numbertext{
+       position: absolute;
+       top: 8px;              /* distance from top edge */
+       left: 8px;             /* distance from left edge */
+       z-index: 3;            /* above the image/arrows */
+       padding: 4px 10px;     /* bubble size */
+       font-size: 12px;
+       line-height: 1;
+       color: #fff;           /* white text */
+       background: rgba(0,0,0,0.45);   /* see-through black */
+       border-radius: 999px;  /* pill/bubble shape */
+       box-shadow: 0 2px 6px rgba(0,0,0,0.25); /* subtle lift */
+       pointer-events: none;  /* clicks pass through */
+       backdrop-filter: blur(2px);
+     }
+     
+     /* (optional) a bit larger on wider screens */
+     @media (min-width: 640px){
+       .ss .numbertext{ font-size: 13px; padding: 6px 12px; }
+     }
+     
+    
+  
+  
+  
+  

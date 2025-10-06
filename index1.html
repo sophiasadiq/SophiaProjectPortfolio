@@ -47,11 +47,54 @@
             <h3>Finally, I connected the battery clip to the breadboard. I plugged the red wire into the breadboard’s positive rail and the black wire into the negative rail. 
                 I then used jumper wires to extend power from the breadboard’s power rails to both the Arduino and the motor driver IC. It’s crucial to make sure that both components 
                 received the correct voltage; for the Arduino, it’s typically 5V, and the motor driver’s voltage varied depending on the motor’s specifications.</h3>
-            <img src="house1.png" width="600" height="600">
-            <img src="house2.png" width="600" height="600">
-            <h3>These sketches are a rough look on how the final product was going to look like.</h3>
-            <img src="car1.png" width="250" height="400">
-            <img src="car2.png" width="250" height="300">
+
+
+               <!-- Slideshow #1(Volunteering Event): Container for the image gallery -->
+             <div class="ss" id="ss3">
+
+    <div class="text-bubble">
+      <h2>Sketches for Prototype</h2>
+  
+      <!-- Slideshow #1(Volunteering Event): Pictures -->
+      <div class="mySlides3">
+        <div class="numbertext">1 / 2</div>
+          <img src="house1.png" style="width:100%">
+      </div>
+    
+      <div class="mySlides3">
+        <div class="numbertext">2 / 2</div>
+          <img src="house2.png" style="width:100%">
+      </div>
+    
+    
+      <!-- Slideshow #1(Volunteering Event): Button Slide -->
+        <button class="nav prev" onclick="plusSlides3(-1)">&#10094;</button>
+        <button class="nav next" onclick="plusSlides3(1)">&#10095;</button>
+      </div>  
+
+
+      <!-- Slideshow #2 (Susan Fennell Complex) -->
+<div class="text-bubble ss" id="ss4">
+    
+    <!-- frames -->
+    <div class="mySlides4">
+        <div class="numbertext">1 / 2</div>
+        <img src="car1.png" width="250" height="400">
+      </div>
+    
+      <div class="mySlides4">
+        <div class="numbertext">2 / 2</div>
+        <img src="car2.png" width="250" height="400">
+      </div>
+  
+  
+    <!-- arrows -->
+    <button class="nav prev" onclick="plusSlides4(-1)">&#10094;</button>
+    <button class="nav next" onclick="plusSlides4(1)">&#10095;</button>
+  </div>
+  
+
+
             <h3>Initially, the vehicle was powered directly by a battery source, but we observed that we could enhance the setup. To do this, we decided to reroute one of 
                 the red wires. Originally, this wire was connected directly to the battery. We changed its connection point on the breadboard to a different slot specifically 
                 meant for a stable voltage supply.</h3>
@@ -170,6 +213,64 @@
         <img src="BackView2.png" width="300" height="300">
             
      </div>
+
+      <!-- Slideshow #3(Volunteering Event): Button Programming -->
+<script>
+    let slideIndex3 = 1;
+    showSlides3(slideIndex3);
+    
+    // Next/previous
+    function plusSlides3(n) { showSlides3(slideIndex3 += n); }
+    // Thumbnail click
+    function currentSlide3(n) { showSlides3(slideIndex3 = n); }
+    
+    function showSlides3(n) {
+      let i;
+      const slides = document.getElementsByClassName("mySlides3");
+      const dots   = document.getElementsByClassName("demo3");
+      const captionText = document.getElementById("caption3");
+    
+      if (n > slides.length) { slideIndex3 = 1; }
+      if (n < 1)             { slideIndex3 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      for (i = 0; i < dots.length;   i++) dots[i].className = dots[i].className.replace(" active", "");
+    
+      slides[slideIndex3-1].style.display = "block";
+      if (dots.length) {
+        dots[slideIndex-1].className += " active";
+        captionText.textContent = dots[slideIndex3-1].alt || "";
+      } else {
+        captionText.textContent = "";
+      }
+    }
+    </script>
+  
+  <!-- Slideshow #4(Susan Fennell Complex): Button Programming -->
+  <script>
+    let slideIndex4 = 1;
+    showSlides4(slideIndex4);
+    
+    function plusSlides4(n){ showSlides4(slideIndex4 += n); }
+    function currentSlide4(n){ showSlides4(slideIndex4 = n); }
+    
+    function showSlides4(n){
+      let i;
+      const slides = document.getElementsByClassName("mySlides4");
+      const captionText = document.getElementById("caption4");
+    
+      if (n > slides.length) { slideIndex4 = 1; }
+      if (n < 1) { slideIndex4 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    
+      slides[slideIndex4-1].style.display = "block";
+      if (captionText) {
+        captionText.textContent = slides[slideIndex4-1].querySelector("img")?.alt || "";
+      }
+    }
+    </script>
+  
 
 
     <div class="container">
