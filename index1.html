@@ -50,12 +50,12 @@
                 received the correct voltage; for the Arduino, it’s typically 5V, and the motor driver’s voltage varied depending on the motor’s specifications.</h3>
 
 
-               <!-- Slideshow #1(Volunteering Event): Container for the image gallery -->
+               <!-- Slideshow #3(Sketches): Container for the image gallery -->
              <div class="ss" id="ss3">
 
     <div class="text-bubble">
   
-      <!-- Slideshow #3(Volunteering Event): Pictures -->
+      <!-- Slideshow #3(Sketches): Pictures -->
       <div class="mySlides3">
         <div class="numbertext">1 / 2</div>
           <img src="house1.png" style="width:100%">
@@ -67,13 +67,13 @@
       </div>
     
     
-      <!-- Slideshow #3(Volunteering Event): Button Slide -->
+      <!-- Slideshow #3(Sketches): Button Slide -->
         <button class="nav prev" onclick="plusSlides3(-1)">&#10094;</button>
         <button class="nav next" onclick="plusSlides3(1)">&#10095;</button>
       </div>  
 
 
-      <!-- Slideshow #4 (Susan Fennell Complex) -->
+      <!-- Slideshow #4 (Prototype) -->
         <div class="ss" id="ss4">
 
     <div class="text-bubble">
@@ -208,15 +208,42 @@
             associated mounting point with another hook. Once the elastic is connected through both hooks, the toy can be winded up and kinetic energy can be accumulated. A full list of parts 
             can be found in figure three.</h3>
 
-        <h2>Final Product:</h2>
-        <img src="FrontView2.png" width="300" height="300">
-        <img src="TopView.png" width="300" height="300">
-        <img src="TopView2.png" width="300" height="300">
-        <img src="BackView2.png" width="300" height="300">
-            
-     </div>
 
-      <!-- Slideshow #3(Volunteering Event): Button Programming -->
+          <!-- Slideshow #5(Final Product): Container for the image gallery -->
+          <div class="ss" id="ss5">
+
+            <div class="text-bubble">
+                <h2>Final Product:</h2>
+          
+              <!-- Slideshow #5(Final Product): Pictures -->
+              <div class="mySlides5">
+                <div class="numbertext">1 / 4</div>
+                  <img src="FrontView2.png" width="300" height="300">
+              </div>
+            
+              <div class="mySlides5">
+                <div class="numbertext">2 / 4</div>
+                  <img src="TopView.png" width="300" height="300">
+              </div>
+
+              <div class="mySlides5">
+                <div class="numbertext">3 / 4</div>
+                  <img src="TopView2.png" width="300" height="300">
+              </div>
+
+              <div class="mySlides5">
+                <div class="numbertext">4 / 4</div>
+                  <img src="BackView2.png" width="300" height="300">
+              </div>
+            
+            
+              <!-- Slideshow #5(Final Product): Button Slide -->
+                <button class="nav prev" onclick="plusSlides3(-1)">&#10094;</button>
+                <button class="nav next" onclick="plusSlides3(1)">&#10095;</button>
+              </div>  
+        
+
+      <!-- Slideshow #3(Sketches): Button Programming -->
 <script>
     let slideIndex3 = 1;
     showSlides3(slideIndex3);
@@ -248,7 +275,7 @@
     }
     </script>
   
-  <!-- Slideshow #4(Susan Fennell Complex): Button Programming -->
+  <!-- Slideshow #4(Prototype): Button Programming -->
   <script>
     let slideIndex4 = 1;
     showSlides4(slideIndex4);
@@ -272,6 +299,33 @@
       }
     }
     </script>
+
+    <!-- Slideshow #5(Final Product): Button Programming -->
+  <script>
+    let slideIndex5 = 1;
+    showSlides4(slideIndex5);
+    
+    function plusSlides5(n){ showSlides5(slideIndex5 += n); }
+    function currentSlide5(n){ showSlides5(slideIndex5 = n); }
+    
+    function showSlides5(n){
+      let i;
+      const slides = document.getElementsByClassName("mySlides5");
+      const captionText = document.getElementById("caption5");
+    
+      if (n > slides.length) { slideIndex5 = 1; }
+      if (n < 1) { slideIndex5 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    
+      slides[slideIndex5-1].style.display = "block";
+      if (captionText) {
+        captionText.textContent = slides[slideIndex5-1].querySelector("img")?.alt || "";
+      }
+    }
+    </script>
+  
+
   
 
 
