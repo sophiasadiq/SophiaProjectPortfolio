@@ -29,7 +29,7 @@
         <div class="text-bubble">
             <h1>University Course Design Projects</h1>
             <div class="text-bubble">
-            <h2>Engineering Design I: Teddy Bear WheelChair (Robotic Device)</h2>
+            <h2>Engineering Design I: Teddy Bear Wheel Chair (Robotic Device)</h2>
             <h3>In our first-year design course (ENGG*1100), my interdisciplinary team and I were tasked with designing, building, and coding a wheelchair for a teddy bear. 
                 The project was both fun and challenging as we had to ensure the wheelchair could complete various tests to assess its performance and accuracy. One of the most 
                 interesting parts of the project was a target-practice test, where we had to integrate a ping-pong projectile system into the design. It was a great way to apply 
@@ -197,10 +197,40 @@
         <h3>In my Engineering and Design II course, we’re building on our design skills by working in teams to reverse engineer everyday objects and create solutions to 
             complex design problems. Our project this semester is to design a 3D-printed toy that fits in a Kinder Egg, adheres to size and weight constraints, and incorporates 
             a mechanism to store and release energy for motion or projectile launching.</h3>
-        <img src="insidecar.png" width="250" height="400">
-        <img src="table1.png" width="250" height="400">
-        <img src="table2.png" width="250" height="400">
-        <img src="table3.png" width="250" height="300">
+
+
+          <!-- Slideshow #8(Car Parts): Container for the image gallery -->
+          <div class="ss" id="ss8">
+
+            <div class="text-bubble">
+          
+              <!-- Slideshow #8(Car Parts): Pictures -->
+              <div class="mySlides8">
+                <div class="numbertext">1 / 4</div>
+                  <img src="insidecar.png" width="250" height="400">
+              </div>
+            
+              <div class="mySlides8">
+                <div class="numbertext">2 / 4</div>
+                  <img src="table1.png" width="250" height="400">
+              </div>
+
+              <div class="mySlides8">
+                <div class="numbertext">3 / 4</div>
+                  <img src="table2.png" width="250" height="400">
+              </div>
+
+              <div class="mySlides8">
+                <div class="numbertext">4 / 4</div>
+                  <img src="table3.png" width="250" height="400">
+              </div>
+            
+            
+              <!-- Slideshow #8(Car Parts): Button Slide -->
+                <button class="nav prev" onclick="plusSlides8(-1)">&#10094;</button>
+                <button class="nav next" onclick="plusSlides8(1)">&#10095;</button>
+              </div>  
+
         <h3>Constraints: 
             
             The following constraints are set in place to ensure that the design of the toy is cost-effective, able to be manufactured in the way that Fererro desires, 
@@ -424,6 +454,31 @@
       slides[slideIndex7-1].style.display = "block";
       if (captionText) {
         captionText.textContent = slides[slideIndex7-1].querySelector("img")?.alt || "";
+      }
+    }
+    </script>
+
+    <!-- Slideshow #8(Car Parts): Button Programming -->
+  <script>
+    let slideIndex8 = 1;
+    showSlides8(slideIndex8);
+    
+    function plusSlides8(n){ showSlides8(slideIndex8 += n); }
+    function currentSlide8(n){ showSlides8(slideIndex8 = n); }
+    
+    function showSlides8(n){
+      let i;
+      const slides = document.getElementsByClassName("mySlides8");
+      const captionText = document.getElementById("caption8");
+    
+      if (n > slides.length) { slideIndex8 = 1; }
+      if (n < 1) { slideIndex8 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    
+      slides[slideIndex8-1].style.display = "block";
+      if (captionText) {
+        captionText.textContent = slides[slideIndex8-1].querySelector("img")?.alt || "";
       }
     }
     </script>
