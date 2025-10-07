@@ -127,7 +127,8 @@ header h1 {
   
   /* hide frames initially (both slide classes) */
   .ss .mySlides3,
-  .ss .mySlides4 { display: none; }
+  .ss .mySlides4,
+  .ss .mySlides5 { display: none; }
   
   /* images define the wrapper height */
   .ss img { display: block; width: 100%; height: auto; }
