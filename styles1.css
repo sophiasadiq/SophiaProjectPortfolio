@@ -117,11 +117,13 @@ header h1 {
 
 
 /* Slideshow wrapper (anchor for the absolute buttons) */
-.ss{
-    position: relative;              /* <<< anchor */
+ .ss{
+    position: relative;
     max-width: 1100px;
-    margin: 0 auto 40px;
+    margin: 0 auto 56px;   /* <<< this bottom margin creates the gap */
+    padding-bottom: 8px;   /* keeps arrows/badge comfortably inside */
   }
+  
   
   /* hide frames initially (both slide classes) */
   .ss .mySlides3,
