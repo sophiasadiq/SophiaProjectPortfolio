@@ -89,7 +89,7 @@ body
 
 .text-bubble {
     background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
-    color: #119990;
+    color: black;
     padding: 40px; /* Increase or decrease for more/less spacing inside the bubble */
     border-radius: 15px; /* Rounded corners */
     max-width: 800px; /* Adjust the maximum width to match the area */
@@ -102,7 +102,7 @@ body
 
 .text-bubble-two {
     background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white */
-    color: #119990;
+    color: black;
     padding: 40px; /* Adjust padding as needed */
     border-radius: 15px; /* Rounded corners */
     max-width: 800px; /* Adjust maximum width */
