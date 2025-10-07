@@ -129,7 +129,8 @@ header h1 {
   .ss .mySlides3,
   .ss .mySlides4, 
   .ss .mySlides5,
-  .ss .mySlides6 
+  .ss .mySlides6,
+  .ss .mySlides7
   
   /* images define the wrapper height */
   .ss img { display: block; width: 100%; height: auto; }

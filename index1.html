@@ -27,7 +27,7 @@
 
     <div class="center-container">
         <div class="text-bubble">
-            <h1>University Course Design Projects:</h1>
+            <h1>University Course Design Projects</h1>
             <div class="text-bubble">
             <h2>Engineering Design I: Teddy Bear WheelChair (Robotic Device)</h2>
             <h3>In our first-year design course (ENGG*1100), my interdisciplinary team and I were tasked with designing, building, and coding a wheelchair for a teddy bear. 
@@ -142,15 +142,41 @@
 
 
             <h3>I painted each individual piece as well as stiched some of the printed images on to the cardboard pieces with yarn.</h3>
-            <h2>Final Product:</h2>
-            <h3>Front View</h3>
-            <img src="Front View.png" width="300" height="300">
-            <h3>Side View #1</h3>
-            <img src="sideview1.png" width="300" height="300">
-            <h3>Side View #2</h3>
-            <img src="sideview2.png" width="300" height="300">
-            <h3>Back View</h3>
-            <img src="backview.png" width="300" height="300">
+            <h2>Final Product</h2>
+
+            <!-- Slideshow #7(Finished Product): Container for the image gallery -->
+            <div class="ss" id="ss7">
+
+                <div class="text-bubble">
+              
+                  <!-- Slideshow #7(Finished Product): Pictures -->
+                  <div class="mySlides7">
+                    <div class="numbertext">1 / 4</div>
+                      <img src="Front View.png" width="300" height="300">
+                  </div>
+                
+                  <div class="mySlides7">
+                    <div class="numbertext">2 / 4</div>
+                      <img src="sideview1.png" width="300" height="300">
+                  </div>
+
+                  <div class="mySlides7">
+                    <div class="numbertext">3 / 4</div>
+                      <img src="sideview2.png" width="300" height="300">
+                  </div>
+
+                  <div class="mySlides7">
+                    <div class="numbertext">4 / 4</div>
+                      <img src="backview.png" width="300" height="300">
+                  </div>
+                
+                
+                  <!-- Slideshow #7(Finished Product): Button Slide -->
+                    <button class="nav prev" onclick="plusSlides7(-1)">&#10094;</button>
+                    <button class="nav next" onclick="plusSlides7(1)">&#10095;</button>
+                  </div>  
+
+
             <h3>To make the launcher functional, I used a small spring-loaded mechanism, allowing the ping pong balls to be loaded into a tube or slot. The trigger mechanism is
                  attached to the easy-to-reach button.</h3>
             <h3>For power, since it’s a robotic device, I integrated the launcher with the existing electrical system, using a small motor to automate the shooting process. I’d ensure 
@@ -158,6 +184,7 @@
             <h3>Lastly, I tested the alignment and made any necessary adjustments to make sure the launcher is stable and fires the ping pong balls smoothly, without compromising the 
                 wheelchair’s mobility or the overall balance of the device.</h3>
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -238,7 +265,7 @@
           <div class="ss" id="ss5">
 
             <div class="text-bubble">
-                <h2>Final Product:</h2>
+                <h2>Final Product</h2>
           
               <!-- Slideshow #5(Final Product): Pictures -->
               <div class="mySlides5">
@@ -372,6 +399,31 @@
       slides[slideIndex6-1].style.display = "block";
       if (captionText) {
         captionText.textContent = slides[slideIndex6-1].querySelector("img")?.alt || "";
+      }
+    }
+    </script>
+
+    <!-- Slideshow #7(Finished Product): Button Programming -->
+  <script>
+    let slideIndex7 = 1;
+    showSlides7(slideIndex7);
+    
+    function plusSlides7(n){ showSlides7(slideIndex7 += n); }
+    function currentSlide7(n){ showSlides7(slideIndex7 = n); }
+    
+    function showSlides7(n){
+      let i;
+      const slides = document.getElementsByClassName("mySlides7");
+      const captionText = document.getElementById("caption7");
+    
+      if (n > slides.length) { slideIndex7 = 1; }
+      if (n < 1) { slideIndex7 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    
+      slides[slideIndex7-1].style.display = "block";
+      if (captionText) {
+        captionText.textContent = slides[slideIndex7-1].querySelector("img")?.alt || "";
       }
     }
     </script>
