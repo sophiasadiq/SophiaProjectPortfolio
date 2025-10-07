@@ -116,8 +116,31 @@
             <h3>Hardware: I’ve used screws and bolts to assemble the plates and secure the motor. Choosing the right hardware is essential to maintain the structural integrity 
                 of the vehicle.</h3>
             <h3>Wheels and Axles: The wheels are partially visible, and I’ve carefully aligned their axles to ensure smooth movement and steering.</h3>
-            <img src="colourful.png" width="300" height="300">
-            <img src="hands.png" width="300" height="300">
+
+
+            <!-- Slideshow #6(In the Making): Container for the image gallery -->
+            <div class="ss" id="ss6">
+
+                <div class="text-bubble">
+              
+                  <!-- Slideshow #6(In the Making): Pictures -->
+                  <div class="mySlides6">
+                    <div class="numbertext">1 / 2</div>
+                      <img src="colourful.png" style="width:100%">
+                  </div>
+                
+                  <div class="mySlides6">
+                    <div class="numbertext">2 / 2</div>
+                      <img src="hands.png" style="width:100%">
+                  </div>
+                
+                
+                  <!-- Slideshow #6(In the Making): Button Slide -->
+                    <button class="nav prev" onclick="plusSlides6(-1)">&#10094;</button>
+                    <button class="nav next" onclick="plusSlides6(1)">&#10095;</button>
+                  </div>  
+
+
             <h3>I painted each individual piece as well as stiched some of the printed images on to the cardboard pieces with yarn.</h3>
             <h2>Final Product:</h2>
             <h3>Front View</h3>
@@ -322,6 +345,32 @@
       slides[slideIndex5-1].style.display = "block";
       if (captionText) {
         captionText.textContent = slides[slideIndex5-1].querySelector("img")?.alt || "";
+      }
+    }
+    </script>
+
+
+    <!-- Slideshow #6(In the Making): Button Programming -->
+  <script>
+    let slideIndex6 = 1;
+    showSlides6(slideIndex6);
+    
+    function plusSlides6(n){ showSlides6(slideIndex6 += n); }
+    function currentSlide6(n){ showSlides6(slideIndex6 = n); }
+    
+    function showSlides6(n){
+      let i;
+      const slides = document.getElementsByClassName("mySlides6");
+      const captionText = document.getElementById("caption6");
+    
+      if (n > slides.length) { slideIndex6 = 1; }
+      if (n < 1) { slideIndex6 = slides.length; }
+    
+      for (i = 0; i < slides.length; i++) slides[i].style.display = "none";
+    
+      slides[slideIndex6-1].style.display = "block";
+      if (captionText) {
+        captionText.textContent = slides[slideIndex6-1].querySelector("img")?.alt || "";
       }
     }
     </script>
