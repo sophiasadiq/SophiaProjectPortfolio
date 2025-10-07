@@ -113,5 +113,11 @@ body
     margin: 20px auto; /* Center horizontally and add margin to separate from other elements */
 }
 
+/* add once */
+.top-gap {
+    margin-top: 64px;   /* tweak 48–80px to taste */
+  }
+  
+
 
 
