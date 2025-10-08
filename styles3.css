@@ -110,6 +110,11 @@ body
 
 
 
+/* add once */
+.top-gap {
+  margin-top: 64px;   /* tweak 48–80px to taste */
+}
+
 
 
 /* Slideshow wrapper (anchor for the absolute buttons) */
@@ -169,7 +174,7 @@ body
      .ss .numbertext{ font-size: 13px; padding: 6px 12px; }
    }
    
-  
+
 
 
 
