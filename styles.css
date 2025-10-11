@@ -120,38 +120,15 @@ header {
     box-sizing: border-box;
 }
 
-/* layout helpers */
-*, *::before, *::after { box-sizing: border-box; }
-
-/* window scroll (scrollbar at page edge, “over” the header) */
-body { 
-  overflow-y: auto;          /* vertical only */
-  overflow-x: hidden; 
-}
-
-.container {
-  overflow-x: hidden !important;
-  max-width: 100%;
-}
-
-/* no inner scroll */
+/* Scrollable Content Area */
 .scrollable-content {
-  padding: 10px;
-  width: 100%;
-  /* no max-height / no overflow here */
+    max-height: 300px; /* Use max-height for flexibility */
+    overflow-y: auto; /* Enables vertical scrolling */
+    padding: 10px;
+    width: 100%; /* Ensures it stays within the container */
 }
 
-/* optional: reserve space for scrollbar to avoid layout shift */
-:root { scrollbar-gutter: stable; }
 
-/* fix the arrow */
-.text-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 10px;
-  border-style: solid;
-  border-color: rgba(255, 255, 255, 0.85) transparent transparent transparent;
-}
+
+
+
