@@ -120,36 +120,38 @@ header {
     box-sizing: border-box;
 }
 
-body {
-    overflow-y: auto; /* Allows vertical scrolling only */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
+/* layout helpers */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* window scroll (scrollbar at page edge, “over” the header) */
+body { 
+  overflow-y: auto;          /* vertical only */
+  overflow-x: hidden; 
 }
 
 .container {
-    overflow-x: hidden !important; /* Ensures no horizontal scroll */
-    max-width: 100%; /* Fixes width to 100% */
+  overflow-x: hidden !important;
+  max-width: 100%;
 }
 
+/* no inner scroll */
+.scrollable-content {
+  padding: 10px;
+  width: 100%;
+  /* no max-height / no overflow here */
+}
 
-body {
-    overflow-y: auto;   /* Allows vertical scrolling only */
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-  }
-  
-  .container {
-    overflow-x: hidden !important; /* Ensures no horizontal scroll */
-    max-width: 100%;               /* Fixes width to 100% */
-  }
-  
-  .scrollable-content {
-    max-height: 300px;  /* Adjust the height as needed */
-    overflow-y: auto;   /* Enables vertical scrolling */
-    padding: 10px;
-    width: 100%;        /* Ensures it stays within the container */
-  }
-  
-  /* Additional Content to Trigger Scroll */
-  .extra-content {
-    height: 1500px;     /* Add content height to test scrollbar visibility */
-  }
-  
+/* optional: reserve space for scrollbar to avoid layout shift */
+:root { scrollbar-gutter: stable; }
+
+/* fix the arrow */
+.text-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.85) transparent transparent transparent;
+}
