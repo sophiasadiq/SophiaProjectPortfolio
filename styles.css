@@ -131,28 +131,30 @@ body {
 }
 
 
-/* 1) Let the page (not a div) handle vertical scroll */
-html, body { height: 100%; overflow-x: hidden; }
-body { overflow-y: auto; }
+:root { --header-h: 72px; }              /* set your header height */
 
-/* 2) Keep the header pinned while the PAGE scrolls */
-.header {               /* whatever your header class/id is */
-  position: sticky;     /* or position: fixed */
-  top: 0;
+html, body { height: 100%; margin: 0; }
+body { overflow: hidden; }               /* stop the window scrollbar */
+
+.site-header{
+  position: fixed;                       /* or sticky */
+  top: 0; left: 0; right: 0;
+  height: var(--header-h);
   z-index: 1000;
 }
 
-/* 3) Stop the inner container from creating its own scrollbar */
-.scrollable-content {
-  max-height: none;
-  overflow: visible;    /* remove overflow-y: auto and the fixed height */
+/* the scrollbar now appears here, starting under the header */
+.scroll-area{
+  margin-top: var(--header-h);
+  height: calc(100dvh - var(--header-h));
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* optional: keep layout stable when scrollbar shows */
+  scrollbar-gutter: stable;
 }
 
-/* Optional: avoid layout shift when the OS shows a scrollbar */
-:root { scrollbar-gutter: stable; }
-
-
-/* Additional Content to Trigger Scroll */
-.extra-content {
-    height: 1500px; /* Add content height to test scrollbar visibility */
+/* if you previously had this, remove/reset it */
+.scrollable-content{
+  height: auto;          /* or 100% if you want */
+  overflow: visible;
 }
