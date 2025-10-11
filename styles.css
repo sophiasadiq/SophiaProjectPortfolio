@@ -130,12 +130,27 @@ body {
     max-width: 100%; /* Fixes width to 100% */
 }
 
-.scrollable-content {
-    max-height: 300px; /* Adjust the height as needed */
-    overflow-y: auto; /* Enables vertical scrolling */
-    padding: 10px;
-    width: 100%; /* Ensures it stays within the container */
+
+/* 1) Let the page (not a div) handle vertical scroll */
+html, body { height: 100%; overflow-x: hidden; }
+body { overflow-y: auto; }
+
+/* 2) Keep the header pinned while the PAGE scrolls */
+.header {               /* whatever your header class/id is */
+  position: sticky;     /* or position: fixed */
+  top: 0;
+  z-index: 1000;
 }
+
+/* 3) Stop the inner container from creating its own scrollbar */
+.scrollable-content {
+  max-height: none;
+  overflow: visible;    /* remove overflow-y: auto and the fixed height */
+}
+
+/* Optional: avoid layout shift when the OS shows a scrollbar */
+:root { scrollbar-gutter: stable; }
+
 
 /* Additional Content to Trigger Scroll */
 .extra-content {
